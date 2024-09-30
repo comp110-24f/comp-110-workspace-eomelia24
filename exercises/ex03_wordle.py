@@ -15,20 +15,9 @@ def contains_char(secret_word: str, char_guess: str) -> bool:
     """Checks indices."""
     assert len(char_guess) == 1
     index: int = 0
-    while index < len(char_guess):
+    while index < len(secret_word):
         if secret_word[index] == char_guess:
-            return bool("True")
+            return True
         else:
-            return bool("False")
-    index += 1    
-       # return secret_word == char_guess
-    #index += 1
-    #return secret_word
-   # while secret_word[index] != char_guess:
-       # index += 1
-        #return
-   # while index < len(secret_word):
-       # if char_guess == secret_word[index]:
-   #     return(char_guess == secret_word[index])
-   # index += 1
-       #return (char_guess == secret_word[index])
+            index += 1
+    return False 
