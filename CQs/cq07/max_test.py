@@ -22,4 +22,3 @@ def test_find_and_remove_max_edge_case() -> None:
     """Checks if find_and_remove_max produces the correct output with an edge case."""
     b: list[int] = []
     assert find_and_remove_max(b) == -1 # same as above; we need to have an argument to have a return value be given, which we can assert should be equal -1 in this case.
-    
