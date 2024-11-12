@@ -27,3 +27,6 @@ class Bear:
         """Hunger score change based on fish eaten."""
         self.hunger_score += num_fish
         return None
+
+
+print("completed")
