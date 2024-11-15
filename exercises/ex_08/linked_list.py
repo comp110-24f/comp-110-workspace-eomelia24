@@ -91,8 +91,16 @@ def value_at(head: Node | None, index: int) -> int:
 def max(head: Node | None) -> int:
     if head is None:
         raise ValueError("Cannot call max with None.")
+    if head.next is None:
+        raise ValueError("Cannot call max with None.")
     else:
-        max_val: int = max(head.next)
-        if max_val < head.value:
-            max_val = head.value
-    return max_val
+        max_val: int
+        if head.next.value > head.value:
+            max_val = max(head.next)
+            return max_val
+
+    # else:
+    # max_val: int = head.value
+    # if max_val < max(head.next):
+    #     max_val = head.value
+    # return max_val
