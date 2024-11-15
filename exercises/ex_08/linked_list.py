@@ -94,10 +94,11 @@ def max(head: Node | None) -> int:
     if head.next is None:
         raise ValueError("Cannot call max with None.")
     else:
-        max_val: int
-        if head.next.value > head.value:
-            max_val = max(head.next)
-            return max_val
+        max_val: int = head.value
+        if head.next.value > max_val:
+            max_val = head.next.value
+            max(head.next)  # not working
+        return max_val  # current output is 20
 
     # else:
     # max_val: int = head.value
