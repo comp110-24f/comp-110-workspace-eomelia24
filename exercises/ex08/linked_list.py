@@ -127,18 +127,18 @@ def linkify(items: list[int]) -> Node | None:
     #   when items has a length of 1
     #   create Node with value = items[0] and next = None
     if len(items) == 1:
-        head: Node = Node(items[0], None)
+        return_val = Node(items[0], None)
     # Recursive case:
     #   create Node with value = items[0] and
     #   next = recursive call with slice subscription
     #       slice subscription shortens list every time linkify is called
     else:
-        head: Node = Node(items[0], linkify(items[1:]))
+        return_val = Node(items[0], linkify(items[1:]))
     # print head using to_str function
     #   print rather than return because return must be Node | None, not str
     # return head, which is Node | None
-    print(to_str(head))
-    return head
+    print(to_str(return_val))
+    return return_val
 
 
 def scale(head: Node | None, factor: int) -> Node | None:
